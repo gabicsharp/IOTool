@@ -1,0 +1,30 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Prices]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column LaneName in table [dbo].[Prices] is currently  NVARCHAR (200) NOT NULL but is being changed to 
+         NVARCHAR (100) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible
+         with type  NVARCHAR (100) NOT NULL.
+
+** User actions
+     Table rebuild
+       [dbo].[Prices] (Table)
+     Alter
+       [dbo].[spRequests_GetDashboard] (Procedure)
+
+** Supporting actions
+     Refresh
+       [dbo].[spPrices_AllSummary] (Procedure)
+       [dbo].[spPrices_Delete] (Procedure)
+       [dbo].[spPrices_GetById] (Procedure)
+       [dbo].[spPrices_GetByIdStandardModel] (Procedure)
+       [dbo].[spPrices_GetByIdToEdit] (Procedure)
+       [dbo].[spPrices_Insert] (Procedure)
+       [dbo].[spPrices_Update] (Procedure)
+
+The type for column LaneName in table [dbo].[Prices] is currently  NVARCHAR (200) NOT NULL but is being changed to  NVARCHAR (100) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  NVARCHAR (100) NOT NULL.
+

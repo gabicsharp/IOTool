@@ -1,0 +1,404 @@
+﻿@model IEnumerable<IOToolDataLibrary.Models.CustomTables.NewPriceModel>
+
+@{ ViewData["Title"] = "Index"; }
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Prices List</h5>
+                    <h6 class="card-subtitle text-muted">List with all prices who are registred in IOTool.</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped" id="table_prices" width="100%">
+                        <thead class="thead-grey">
+                            <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(prices => prices.TransporterName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.LaneName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.OriginCountry)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.DestinationCountry)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.RequestType)
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Minimum)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From1To4Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From5To8Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From9To12Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From13To16Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From17To20Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From21To24Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From25To28Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From29To32Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From33To36Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From37To40Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From41To44Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From45To48Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From49To52Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From53To56Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From57To60Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From61To64Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Maximum)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ShipmentFrequencyLTL)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TransitTimeGroupage)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TransitTimeLTL)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.CommentsLTL)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Tons3_5)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TransitTime3_5Tons)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ShipmentFrequency3_5Tons)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Tons7_5)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ShipmentFrequency7_5Tons)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Tons24)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ShipmentFrequency24Tons)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TransitTimeFTL)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.CommentsFTL)
+                                    </th>
+                                </tr>
+                        </thead>
+                        
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TransporterName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LaneName)
+                    </td>
+                    <td style="display:none!important;">
+                        @Html.DisplayFor(modelItem => item.OriginCountry)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DestinationCountry)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RequestType)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="align-middle mr-2 fas fa-fw fa-edit IconsTable"></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="align-middle mr-2 fas fa-fw fa-trash-alt IconsTable"></a>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Minimum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From1To4Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From5To8Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From9To12Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From13To16Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From17To20Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From21To24Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From25To28Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From29To32Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From33To36Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From37To40Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From41To44Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From45To48Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From49To52Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From53To56Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From57To60Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From61To64Pallets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Maximum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShipmentFrequencyLTL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TransitTimeGroupage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TransitTimeLTL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CommentsLTL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tons3_5)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TransitTime3_5Tons)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShipmentFrequency3_5Tons)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tons7_5)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShipmentFrequency7_5Tons)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tons24)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShipmentFrequency24Tons)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TransitTimeFTL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CommentsFTL)
+                    </td>
+                </tr>
+}
+                        </tbody>
+                        <tfoot>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TransporterName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.LaneName)
+                                    </th>
+                                    <th style="display:none!important;">
+                                        @Html.DisplayNameFor(model => model.OriginCountry)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.DestinationCountry)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.RequestType)
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Minimum)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From1To4Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From5To8Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From9To12Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From13To16Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From17To20Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From21To24Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From25To28Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From29To32Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From33To36Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From37To40Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From41To44Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From45To48Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From49To52Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From53To56Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From57To60Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.From61To64Pallets)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Maximum)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ShipmentFrequencyLTL)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TransitTimeGroupage)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TransitTimeLTL)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.CommentsLTL)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Tons3_5)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TransitTime3_5Tons)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ShipmentFrequency3_5Tons)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Tons7_5)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ShipmentFrequency7_5Tons)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Tons24)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ShipmentFrequency24Tons)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TransitTimeFTL)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.CommentsFTL)
+                                    </th>
+                                </tr>
+                            </tfoot>
+                    </table>
+                    <div class="mb-3">
+                        <a asp-action="Create" class="btn btn-card">  <i class="fas fa-check"> Add a new price</i></a>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#table_prices tfoot th').each(function () {
+        var title = $('#example thead th').eq($(this).index()).text();
+        $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+    });
+
+    $('#table_prices').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            { extend: 'csv', title: 'IOTool Prices', className: 'btn btn-table' },
+            { extend: 'print', className: 'btn btn-table' }
+        ],
+        responsive: true,
+    });
+    var table = $('#table_prices').DataTable();
+
+    table.columns().every(function () {
+        var that = this;
+
+        $('input', this.footer()).on('keyup change', function () {
+            that
+                .search(this.value)
+                .draw();
+        });
+    });
+</script>

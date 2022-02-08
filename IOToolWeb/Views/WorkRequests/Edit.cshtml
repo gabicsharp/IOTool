@@ -1,0 +1,683 @@
+﻿@model IOToolDataLibrary.Models.CustomTables.NewRequestEditModel
+@{ ViewData["Title"] = "Update"; }
+
+@if (Model is null)
+{
+<h4>The requested record was not found.</h4> }
+else
+{
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Update request</h5>
+                    <h6 class="card-subtitle text-muted">Here you can update a request in IOTool.</h6>
+                </div>
+                @if (Model.Id_RequestStatus == 1 || Model.Id_RequestStatus == 2)
+                {
+<div class="card-body">
+    <div class="row col-lg-12 col-md-12">
+        <div class="col-lg-4 col-md-6" style="visibility:hidden;">
+            <h5>@Html.DisplayName("Id")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6" style="visibility:hidden;">
+            @Html.TextBoxFor(m => m.Id, new { @class = "form-control", @min = "1", @oninput = "validity.valid||(value='');", @readonly = true, @style = "visibility:hidden;" })
+            @Html.ValidationMessage("Id", "", new { @class = "text-danger" })
+            @*<br />*@
+        </div>
+        <div class="col-lg-4 col-md-6" style="visibility:hidden;">
+            <h5>@Html.DisplayName("Id_RequestStatus")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6" style="visibility:hidden;">
+            @Html.TextBoxFor(m => m.Id_RequestStatus, new { @class = "form-control", @min = "1", @oninput = "validity.valid||(value='');", @readonly = true, @style = "visibility:hidden;" })
+            @Html.ValidationMessage("Id_RequestStatus", "", new { @class = "text-danger" })
+            @*<br />*@
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("Status")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.Status, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("RequestDetails_Status", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("RequestType")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.RequestType, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("RequestType", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("From")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.From, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("From", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("To")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.To, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("To", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("ETD")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.ETD, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("ETD", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("ETA")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.ETA, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("ETA", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("PalletNr")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.PalletNr, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("PalletNr", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("Weight")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.Weight, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("Weight", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("CommentRequester")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextAreaFor(m => m.CommentRequester, new { @class = "form-control", @rows = "3", @style = "resize:none", @readonly = true })
+            @Html.ValidationMessage("CommentRequester", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("Id_Transporter")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            <select class="form-control select2" id="Id_Transporter" name="Id_Transporter" style="width:100%;">
+            </select>
+            @Html.ValidationMessage("Id_Transporter", "", new { @class = "text-danger" })
+            <br />
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("Id_TransportType")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            <select class="form-control select2" id="Id_TransportType" name="Id_TransportType" style="width:100%;">
+            </select>
+            @Html.ValidationMessage("Id_TransportType", "", new { @class = "text-danger" })
+            <br />
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("Id_Material")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            <select class="form-control select2" id="Id_Material" name="Id_Material" style="width:100%;">
+            </select>
+            @Html.ValidationMessage("Id_Material", "", new { @class = "text-danger" })
+            <br />
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("AWB")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.AWB, new { @class = "form-control" })
+            @Html.ValidationMessage("AWB", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("BillNr")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.BillNr, new { @class = "form-control" })
+            @Html.ValidationMessage("BillNr", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("Price")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.Price, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+            @Html.ValidationMessage("Price", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("PremiumFreight")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            <select class="form-control select2" id="PremiumFreight" name="PremiumFreight" style="width:100%;">
+
+                @if (Model.PremiumFreight == 0)
+                {
+<option value="0" selected>Please select</option>
+                        <option value="1">No</option>
+                                                <option value="2">Yes</option> }
+                                                                    else if (Model.PremiumFreight == 1)
+                                                                    {
+                                                <option value="0">Please select</option>
+                                                                        <option value="1" selected>No</option>
+                                                                                                <option value="2">Yes</option>
+ }
+                                                                                            else if (Model.PremiumFreight == 2)
+                                                                                            {
+                                                                        <option value="0">Please select</option>
+                                                                                                <option value="1">No</option>
+                                                                                                                        <option value="2" selected>Yes</option>
+}
+
+            </select>
+            @Html.ValidationMessage("PremiumFreight", "", new { @class = "text-danger" })
+            <br />
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("Id_CostCenter")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            <select class="form-control select2" id="Id_CostCenter" name="Id_CostCenter" style="width:100%;"></select>
+            @Html.ValidationMessage("Id_CostCenter", "", new { @class = "text-danger" })
+            <br />
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("CommentProcessor")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextAreaFor(m => m.CommentProcessor, new { @class = "form-control", @rows = "3", @style = "resize:none" })
+            @Html.ValidationMessage("CommentProcessor", "", new { @class = "text-danger" })
+            <br />
+        </div>
+    </div>
+    <div id="txt_Message"><h2></h2></div>
+    <br />
+    <input type="submit" value="Update" id="btn_Update" class="btn btn-card" />
+    <input type="submit" value="Calculate" id="btn_Calculate" class="btn btn-card" />
+    <input id="helper1" value="@Model.Id_Transporter" readonly style="visibility:hidden;" />
+    <input id="helper2" value="@Model.Id_TransportType" readonly style="visibility:hidden;" />
+    <input id="helper3" value="@Model.Id_Material" readonly style="visibility:hidden;" />
+</div> }
+else if (Model.Id_RequestStatus == 3)
+{
+<div class="card-body">
+    <div class="row col-lg-12 col-md-12">
+        <div class="col-lg-4 col-md-6" style="visibility:hidden;">
+            <h5>@Html.DisplayName("Id")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6" style="visibility:hidden;">
+            @Html.TextBoxFor(m => m.Id, new { @class = "form-control", @min = "1", @oninput = "validity.valid||(value='');", @readonly = true, @style = "visibility:hidden;" })
+            @Html.ValidationMessage("Id", "", new { @class = "text-danger" })
+            @*<br />*@
+        </div>
+        <div class="col-lg-4 col-md-6" style="visibility:hidden;">
+            <h5>@Html.DisplayName("Id_RequestStatus")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6" style="visibility:hidden;">
+            @Html.TextBoxFor(m => m.Id_RequestStatus, new { @class = "form-control", @min = "1", @oninput = "validity.valid||(value='');", @readonly = true, @style = "visibility:hidden;" })
+            @Html.ValidationMessage("Id_RequestStatus", "", new { @class = "text-danger" })
+            @*<br />*@
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("Status")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.Status, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("RequestDetails_Status", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("RequestType")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.RequestType, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("RequestType", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("From")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.From, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("From", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("To")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.To, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("To", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("ETD")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.ETD, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("ETD", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("ETA")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.ETA, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("ETA", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("PalletNr")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.PalletNr, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("PalletNr", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("Weight")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.Weight, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("Weight", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("CommentRequester")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextAreaFor(m => m.CommentRequester, new { @class = "form-control", @rows = "3", @style = "resize:none", @readonly = true })
+            @Html.ValidationMessage("CommentRequester", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("Id_Transporter")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            <select class="form-control select2" id="Id_Transporter" name="Id_Transporter" style="width:100%;">
+            </select>
+            @Html.ValidationMessage("Id_Transporter", "", new { @class = "text-danger" })
+            <br />
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("Id_TransportType")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            <select class="form-control select2" id="Id_TransportType" name="Id_TransportType" style="width:100%;">
+            </select>
+            @Html.ValidationMessage("Id_TransportType", "", new { @class = "text-danger" })
+            <br />
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("Id_Material")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            <select class="form-control select2" id="Id_Material" name="Id_Material" style="width:100%;">
+            </select>
+            @Html.ValidationMessage("Id_Material", "", new { @class = "text-danger" })
+            <br />
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("AWB")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.AWB, new { @class = "form-control", @readonly = true })
+            @Html.ValidationMessage("AWB", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("BillNr")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.BillNr, new { @class = "form-control" })
+            @Html.ValidationMessage("BillNr", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("Price")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextBoxFor(m => m.Price, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');", @readonly = true })
+            @Html.ValidationMessage("Price", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("PremiumFreight")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            <select class="form-control select2" id="PremiumFreight" name="PremiumFreight" style="width:100%;">
+
+                @if (Model.PremiumFreight == 0)
+                {
+                        <option value="0" selected>Please select</option>
+                        <option value="1" disabled>No</option>
+                        <option value="2" disabled>Yes</option>
+                 }
+                 else if (Model.PremiumFreight == 1)
+                 {
+                       <option value="0" disabled>Please select</option>
+                       <option value="1" selected>No</option>
+                       <option value="2" disabled>Yes</option> 
+                 }
+                 else if (Model.PremiumFreight == 2)
+                 {
+                       <option value="0" disabled>Please select</option>
+                       <option value="1" disabled>No</option>
+                       <option value="2" selected>Yes</option>
+                 }
+
+            </select>
+            @Html.ValidationMessage("PremiumFreight", "", new { @class = "text-danger" })
+            <br />
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("Id_CostCenter")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            <select class="form-control select2" id="Id_CostCenter" name="Id_CostCenter" style="width:100%;"></select>
+            @Html.ValidationMessage("Id_CostCenter", "", new { @class = "text-danger" })
+            <br />
+            <br />
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>@Html.DisplayName("CommentProcessor")</h5>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            @Html.TextAreaFor(m => m.CommentProcessor, new { @class = "form-control", @rows = "3", @style = "resize:none", @readonly = true })
+            @Html.ValidationMessage("CommentProcessor", "", new { @class = "text-danger" })
+            <br />
+        </div>
+    </div>
+    <div id="txt_Message"><h2></h2></div>
+    <br />
+    <input type="submit" value="Update" id="btn_Update" class="btn btn-card" />
+    <input type="submit" value="Calculate" id="btn_Calculate" class="btn btn-card" />
+    <input id="helper1" value="@Model.Id_Transporter" readonly style="visibility:hidden;" />
+    <input id="helper2" value="@Model.Id_TransportType" readonly style="visibility:hidden;" />
+    <input id="helper3" value="@Model.Id_Material" readonly style="visibility:hidden;" />
+</div>}
+
+            </div>
+        </div>
+    </div>
+</div>}
+
+<script type="text/javascript">
+    $("#Id_Transporter").select2();
+    $("#Id_TransportType").select2();
+    $("#Id_Material").select2();
+    $("#PremiumFreight").select2();
+    $("#Id_CostCenter").select2();
+
+    FillSelectTransporters();
+    FillSelectTransportTypes();
+    FillSelectMaterials();
+    FillSelectCostCenters();
+
+    function FillSelectTransporters() {
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FillTransporters",
+            success: function (allTransporters) {
+                $("#Id_Transporter").empty();
+                if (@Model.Id_RequestStatus == 1 || @Model.Id_RequestStatus == 2) {
+                    $("#Id_Transporter").append('<option value=0>Please select</option>');
+                } else if (@Model.Id_RequestStatus == 3) {
+                    $("#Id_Transporter").append('<option value=0 disabled>Please select</option>');
+                }
+                $.each(allTransporters, function (_allTransporters, allTransporters) {
+                    if (@Model.Id_Transporter == allTransporters.id) {
+                        $("#Id_Transporter").append('<option value=' + allTransporters.id + ' selected >' + allTransporters.name + '</option>');
+                    }
+                    else {
+                        if (@Model.Id_RequestStatus == 1 || @Model.Id_RequestStatus == 2) {
+                            $("#Id_Transporter").append('<option value=' + allTransporters.id + ' >' + allTransporters.name + '</option>');
+                        } else if (@Model.Id_RequestStatus == 3) {
+                            $("#Id_Transporter").append('<option value=' + allTransporters.id + ' disabled >' + allTransporters.name + '</option>');
+                        }
+                    }
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+
+    function FillSelectTransportTypes() {
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FillTransportTypes",
+            success: function (allTransportTypes) {
+                $("#Id_TransportType").empty();
+                if (@Model.Id_RequestStatus == 1 || @Model.Id_RequestStatus == 2) {
+                    $("#Id_TransportType").append('<option value=0>Please select</option>');
+                } else if (@Model.Id_RequestStatus == 3) {
+                    $("#Id_TransportType").append('<option value=0 disabled>Please select</option>');
+                }
+                $.each(allTransportTypes, function (_allTransportTypes, allTransportTypes) {
+                    if (@Model.Id_TransportType == allTransportTypes.id) {
+                        $("#Id_TransportType").append('<option value=' + allTransportTypes.id + ' selected >' + allTransportTypes.type + '</option>');
+                    }
+                      else {
+                        if (@Model.Id_RequestStatus == 1 || @Model.Id_RequestStatus == 2) {
+                            $("#Id_TransportType").append('<option value=' + allTransportTypes.id + ' >' + allTransportTypes.type + '</option>');
+                        } else if (@Model.Id_RequestStatus == 3) {
+                            $("#Id_TransportType").append('<option value=' + allTransportTypes.id + ' disabled>' + allTransportTypes.type + '</option>');
+                        }
+                    }
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+
+    function FillSelectMaterials() {
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FillMaterials",
+            success: function (allMaterials) {
+                $("#Id_Material").empty();
+                if (@Model.Id_RequestStatus == 1 || @Model.Id_RequestStatus == 2) {
+                    $("#Id_Material").append('<option value=0>Please select</option>');
+                } else if (@Model.Id_RequestStatus == 3) {
+                    $("#Id_Material").append('<option value=0 disabled>Please select</option>');
+                }
+                $.each(allMaterials, function (_allMaterials, allMaterials) {
+                    if (@Model.Id_Material == allMaterials.id) {
+                        $("#Id_Material").append('<option value=' + allMaterials.id + ' selected >' + allMaterials.material + '</option>');
+                    }
+                    else {
+                        if (@Model.Id_RequestStatus == 1 || @Model.Id_RequestStatus == 2) {
+                            $("#Id_Material").append('<option value=' + allMaterials.id + ' >' + allMaterials.material + '</option>');
+                        } else if (@Model.Id_RequestStatus == 3) {
+                            $("#Id_Material").append('<option value=' + allMaterials.id + ' disabled>' + allMaterials.material + '</option>');
+                        }
+                    }
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+
+    function FillSelectCostCenters() {
+      $.ajax({
+          type: "POST",
+          url: "/DPs/FillCostCenters",
+          success: function (allCostCenters) {
+              $("#Id_CostCenter").empty();
+                 if (@Model.Id_RequestStatus == 1 || @Model.Id_RequestStatus == 2) {
+                     $("#Id_CostCenter").append('<option value=0>Please select</option>');
+                } else if (@Model.Id_RequestStatus == 3) {
+                     $("#Id_CostCenter").append('<option value=0 disabled>Please select</option>');
+                }
+              $.each(allCostCenters, function (_allCostCenters, allCostCenters) {
+                  if (@Model.Id_CostCenter == allCostCenters.id) {
+                      $("#Id_CostCenter").append('<option value=' + allCostCenters.id + ' selected >' + allCostCenters.cc + '</option>');
+                  }
+                    else {
+                        if (@Model.Id_RequestStatus == 1 || @Model.Id_RequestStatus == 2) {
+                            $("#Id_CostCenter").append('<option value=' + allMaterials.id + ' >' + allMaterials.material + '</option>');
+                        } else if (@Model.Id_RequestStatus == 3) {
+                            $("#Id_CostCenter").append('<option value=' + allMaterials.id + 'disabled >' + allMaterials.material + '</option>');
+                        }
+                    }
+              });
+              HideDivLoad();
+          },
+          error: function (_error) {
+              HideDivLoad();
+              toastr._error("Error...");
+          }
+      });
+    }
+
+    $(document).off("click", "#btn_Update").on("click", "#btn_Update", function () {
+        ShowDivLoad();
+        var Id = $("#Id").val();
+        var Id_Transporter = $("#Id_Transporter").find(":selected").val();
+        var Id_TransportType = $("#Id_TransportType").find(":selected").val();
+        var Id_Material = $("#Id_Material").find(":selected").val();
+        var PremiumFreight = $("#PremiumFreight").find(":selected").val();
+        var Price = $("#Price").val();
+        var AWB = $("#AWB").val();
+        var BillNr = $("#BillNr").val();
+        var CommentProcessor = $("#CommentProcessor").val();
+        var Id_CostCenter = $("#Id_CostCenter").find(":selected").val();
+        var Id_RequestStatus = $("#Id_RequestStatus").val();
+
+        if (Id_Transporter > 0) {
+            if (Id_TransportType > 0) {
+                if (Id_Material > 0) {
+                    if (Price > 0) {
+                        if (PremiumFreight > 0) {
+                            if (Id_CostCenter > 0) {
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/WorkRequests/SubmitUpdate",
+                                    data: {
+                                        Id: Id,
+                                        Id_Transporter: Id_Transporter,
+                                        Id_TransportType: Id_TransportType,
+                                        Id_Material: Id_Material,
+                                        PremiumFreight: PremiumFreight,
+                                        Price: Price,
+                                        AWB: AWB,
+                                        BillNr: BillNr,
+                                        CommentProcessor: CommentProcessor,
+                                        Id_CostCenter: Id_CostCenter,
+                                        Id_RequestStatus: Id_RequestStatus
+                                    },
+                                    success: function (result) {
+                                        if (result.message == "") {
+                                            window.location.href = '/' + result.controllerName + '/' + result.actionName + '/';
+                                        }
+                                        else {
+                                            HideDivLoad();
+                                            toastr.error("Something went wrong...");
+                                        }
+                                        HideDivLoad();
+                                    },
+                                    error: function () {
+                                        HideDivLoad();
+                                    }
+                                });
+                            }
+                            else {
+                                HideDivLoad();
+                                toastr.warning("Please select a cost center...");
+                            }
+                        }
+                        else {
+                            HideDivLoad();
+                            toastr.warning("Please select an option for premium freight...");
+                        }
+                    }
+                    else {
+                        HideDivLoad();
+                        toastr.warning("Please enter price...");
+                    }
+                }
+                else {
+                    HideDivLoad();
+                    toastr.warning("Please select material...");
+                }
+            }
+            else {
+                HideDivLoad();
+                toastr.warning("Please select transport type...");
+            }
+        }
+        else {
+            HideDivLoad();
+            toastr.warning("Please select forwarder...");
+        }
+    });
+
+    $(document).off("click", "#btn_Calculate").on("click", "#btn_Calculate", function () {
+        ShowDivLoad();
+        var Id = $("#Id").val();
+        var Id_TransportType = $("#Id_TransportType").find(":selected").val();
+        var PremiumFreight = $("#PremiumFreight").find(":selected").val();
+        var Price = $("#Price").val();
+
+        if (Id_TransportType == 1) {
+            if (PremiumFreight == 1) {
+                $.ajax({
+                    type: "POST",
+                    url: "/DPs/CalculateProcessor",
+                    data: {
+                        Id_Request: Id
+                    },
+                    success: function (result) {
+                        $("div#txt_Message h2").html(result.message);
+                        $("#Price").val(result.totalPrice);
+                        HideDivLoad();
+                    },
+                    error: function () {
+                        HideDivLoad();
+                    }
+                });
+            }
+            else {
+                HideDivLoad();
+                toastr.warning("You can't calculate for premium freight request");
+            }
+        }
+        else {
+            HideDivLoad();
+            toastr.warning("You can calculate only for transport type land...");
+        }
+    });
+</script>

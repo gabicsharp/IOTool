@@ -1,0 +1,24 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column Id_RequestStatus in table [dbo].[RequestInfo] is currently  NVARCHAR (50) NOT NULL but is being
+         changed to  INT NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible
+         with type  INT NOT NULL.
+
+** User actions
+     Rename
+       [dbo].[RequestInfo].[Id_RequestStatus] (Column)
+     Alter
+       [dbo].[RequestInfo] (Table)
+       [dbo].[spRequestInfo_Insert] (Procedure)
+       [dbo].[spRequests_GetByUser] (Procedure)
+
+** Supporting actions
+
+The type for column Id_RequestStatus in table [dbo].[RequestInfo] is currently  NVARCHAR (50) NOT NULL but is being changed to  INT NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  INT NOT NULL.
+

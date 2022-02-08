@@ -1,0 +1,59 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column Id_RequestStatus in table [dbo].[RequestInfo] is currently  NVARCHAR (50) NOT NULL but is being
+         changed to  INT NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible
+         with type  INT NOT NULL.
+       The column [dbo].[Requests].[Weight] on table [dbo].[Requests] must be added, but the column has no default value and
+         does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+       The type for column Id_CostCenter in table [dbo].[Requests] is currently  NVARCHAR (50) NOT NULL but is being changed to
+          INT NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type 
+         INT NOT NULL.
+       The type for column Id_Material in table [dbo].[Requests] is currently  NVARCHAR (50) NOT NULL but is being changed to 
+         INT NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type 
+         INT NOT NULL.
+
+** User actions
+     Rename
+       [dbo].[Requests].[Id_Material] (Column)
+       [dbo].[Requests].[Id_CostCenter] (Column)
+       [dbo].[RequestInfo].[Id_RequestStatus] (Column)
+     Alter
+       [dbo].[RequestInfo] (Table)
+       [dbo].[Requests] (Table)
+     Create
+       [dbo].[CostCenters] (Table)
+       [dbo].[Materials] (Table)
+       [dbo].[RequestStatus] (Table)
+       [dbo].[spEmailGroups_All] (Procedure)
+       [dbo].[spPrices_GetByIdStandardModel] (Procedure)
+       [dbo].[spPrices_GetByIdToEdit] (Procedure)
+       [dbo].[spPrices_Update] (Procedure)
+       [dbo].[spRequestInfo_Insert] (Procedure)
+       [dbo].[spRequests_DeleteByProcessor] (Procedure)
+       [dbo].[spRequests_DeleteByRequester] (Procedure)
+       [dbo].[spRequests_GetById] (Procedure)
+       [dbo].[spRequests_GetByIdToDelete] (Procedure)
+       [dbo].[spRequests_GetByIdToSpecificUser] (Procedure)
+       [dbo].[spRequests_GetByUser] (Procedure)
+       [dbo].[spRequests_GetDashboard] (Procedure)
+       [dbo].[spRequests_Insert] (Procedure)
+       [dbo].[spRequests_StatusWork] (Procedure)
+       [dbo].[spRequests_UpdateByUser] (Procedure)
+       [dbo].[spRequestTypes_GetById] (Procedure)
+       [dbo].[spSmtp_GetById] (Procedure)
+
+** Supporting actions
+
+The type for column Id_RequestStatus in table [dbo].[RequestInfo] is currently  NVARCHAR (50) NOT NULL but is being changed to  INT NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  INT NOT NULL.
+The column [dbo].[Requests].[Weight] on table [dbo].[Requests] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The type for column Id_CostCenter in table [dbo].[Requests] is currently  NVARCHAR (50) NOT NULL but is being changed to  INT NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  INT NOT NULL.
+The type for column Id_Material in table [dbo].[Requests] is currently  NVARCHAR (50) NOT NULL but is being changed to  INT NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  INT NOT NULL.
+

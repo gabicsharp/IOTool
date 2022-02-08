@@ -1,0 +1,102 @@
+﻿@model IOToolDataLibrary.Models.CustomTables.NewMyRequestSummaryModel
+
+@{ ViewData["Title"] = "Delete"; }
+
+@if (Model is null)
+{
+<h4>The requested record was not found.</h4> }
+else
+{
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Request Delete</h5>
+                    <h6 class="card-subtitle text-muted">Action to delete a request registred in IOTool.</h6>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Delete">
+                        <p class="card-text">  Are you sure you want to delete this request from tool?</p>
+                        <br />
+                        <div class="row col-lg-12 col-md-12">
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Status")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.Status, new { @class = "form-control", @readonly = true })
+                                @Html.ValidationMessage("Status", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("RequestType")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.RequestType, new { @class = "form-control", @readonly = true })
+                                @Html.ValidationMessage("RequestType", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From, new { @class = "form-control", @readonly = true })
+                                @Html.ValidationMessage("From", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("To")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.To, new { @class = "form-control", @readonly = true })
+                                @Html.ValidationMessage("To", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("ETD")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.ETD, new { @class = "form-control", @readonly = true })
+                                @Html.ValidationMessage("ETD", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("ETA")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.ETA, new { @class = "form-control", @readonly = true })
+                                @Html.ValidationMessage("ETA", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("PalletNr")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.PalletNr, new { @class = "form-control", @type = "number", @readonly = true })
+                                @Html.ValidationMessage("PalletNr", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Weight")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.Weight, new { @class = "form-control", @type = "number", @readonly = true })
+                                @Html.ValidationMessage("Weight", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("CommentRequester")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextAreaFor(m => m.CommentRequester, new { @class = "form-control", @rows = "5", @style = "resize:none" })
+                                @Html.ValidationMessage("CommentRequester", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                        </div>
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>}

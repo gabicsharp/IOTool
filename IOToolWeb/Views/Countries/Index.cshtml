@@ -1,0 +1,103 @@
+﻿@model IEnumerable<IOToolDataLibrary.Models.CountriesModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Countries List</h5>
+                    <h6 class="card-subtitle text-muted">List with all countries who are registred in IOTool.</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped" id="table_countries" style="width:100%">
+                        <thead class="thead-grey">
+                            <tr>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.Id)
+                                </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Code)
+                                </th>
+                                <th>
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Code)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="align-middle mr-2 fas fa-fw fa-trash-alt IconsTable"></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.Id)
+                                </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Code)
+                                </th>
+                                <th>
+                                    Action
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="mb-3">
+                        <a asp-action="Create" class="btn btn-addNewEntry">  <i class="fas fa-check"> Add a new country</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#table_countries tfoot th').each(function () {
+        var title = $('#example thead th').eq($(this).index()).text();
+        $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+    });
+
+    // DataTable
+    $('#table_countries').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            { extend: 'csv', title: 'IOTool Countries', className: 'btn btn-table' },
+            { extend: 'print', className: 'btn btn-table' }
+        ],
+    });
+    var table = $('#table_countries').DataTable();
+
+    // Apply the search
+    table.columns().every(function () {
+        var that = this;
+
+        $('input', this.footer()).on('keyup change', function () {
+            that
+                .search(this.value)
+                .draw();
+        });
+    });
+</script>

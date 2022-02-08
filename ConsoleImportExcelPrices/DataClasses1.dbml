@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IOToolData" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=IOToolData;Integrated Security=True" SettingsObjectName="ConsoleImportExcelPrices.Properties.Settings" SettingsPropertyName="IOToolDataConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Cities" Member="Cities">
+    <Type Name="City">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Country" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Countries" Member="Countries">
+    <Type Name="Country">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Prices" Member="Prices">
+    <Type Name="Price">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Transporter" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LaneName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Id_OriginCountry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_OriginCity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_OriginZip" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_DestinationCountry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_DestinationCity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_DestinationZip" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_RequestType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_PartnerLocation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Minimum" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From1To4Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From5To8Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From9To12Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From13To16Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From17To20Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From21To24Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From25To28Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From29To32Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From33To36Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From37To40Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From41To44Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From45To48Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From49To52Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From53To56Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From57To60Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="From61To64Pallets" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Maximum" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ShipmentFrequencyLTL" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TransitTimeGroupage" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TransitTimeLTL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CommentsLTL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Tons3_5" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="TransitTime3_5Tons" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ShipmentFrequency3_5Tons" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tons7_5" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ShipmentFrequency7_5Tons" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tons24" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ShipmentFrequency24Tons" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TransitTimeFTL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CommentsFTL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PricesImport" Member="PricesImports">
+    <Type Name="PricesImport">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LaneID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LaneName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OriginCountry" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OriginCity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OriginZip" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DestinationCountry" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DestinationCity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DestinationZip" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Direction" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PartnerLocation" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Minimum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From1To4Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From5To8Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From9To12Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From13To16Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From17To20Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From21To24Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From25To28Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From29To32Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From33To36Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From37To40Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From41To44Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From45To48Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From49To52Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From53To56Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From57To60Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="From61To64Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Maximum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShipmentFrequencyLTL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TransitTimeGroupage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TransitTimeLTL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommentsLTL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tons3_5" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TransitTime3_5Tons" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShipmentFrequency3_5Tons" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tons7_5" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ShipmentFrequency7_5Tons" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tons24" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ShipmentFrequency24Tons" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TransitTimeFTL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommentsFTL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

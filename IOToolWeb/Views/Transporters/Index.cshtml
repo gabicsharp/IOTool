@@ -1,0 +1,111 @@
+﻿@model IEnumerable<IOToolDataLibrary.Models.TransportersModel>
+
+@{ ViewData["Title"] = "Index"; }
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Transporters List</h5>
+                    <h6 class="card-subtitle text-muted">List with all transporters who are registred in IOTool.</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped" id="table_transporters" width="100%">
+                        <thead class="thead-grey">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Alias)
+                                </th>
+                                <th>
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                 <tr>
+                                     <td>
+                                         @Html.DisplayFor(modelItem => item.Name)
+                                     </td>
+                                     <td>
+                                         @Html.DisplayFor(modelItem => item.Email)
+                                     </td>
+                                     <td>
+                                         @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                     </td>
+                                     <td>
+                                         @Html.DisplayFor(modelItem => item.Alias)
+                                     </td>
+                                     <td>
+                                         <a asp-action="Edit" asp-route-id="@item.Id" class="align-middle mr-2 fas fa-fw fa-edit IconsTable"></a>
+                                         <a asp-action="Delete" asp-route-id="@item.Id" class="align-middle mr-2 fas fa-fw fa-trash-alt IconsTable"></a>
+                                     </td>
+                                 </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Alias)
+                                </th>
+                                <th>
+                                    Action
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="mb-3">
+                        <a asp-action="Create" class="btn btn-card"><i class="fas fa-check"> Add a new transporter</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$('#table_transporters tfoot th').each(function () {
+    var title = $('#example thead th').eq($(this).index()).text();
+    $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+});
+
+$('#table_transporters').DataTable({
+    dom: 'Bfrtip',
+    buttons: [
+        { extend: 'csv', title: 'IOTool All Transporters', className: 'btn btn-table' },
+        { extend: 'print', className: 'btn btn-table' }
+    ],
+    responsive: true,
+});
+var table = $('#table_transporters').DataTable();
+
+table.columns().every(function () {
+    var that = this;
+
+    $('input', this.footer()).on('keyup change', function () {
+        that
+            .search(this.value)
+            .draw();
+    });
+});
+</script>

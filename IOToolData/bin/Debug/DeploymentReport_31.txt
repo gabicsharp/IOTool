@@ -1,0 +1,22 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Requests]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Table rebuild
+       [dbo].[Requests] (Table)
+     Alter
+       [dbo].[spRequests_GetByUser] (Procedure)
+
+** Supporting actions
+     Refresh
+       [dbo].[spRequests_GetById] (Procedure)
+       [dbo].[spRequests_GetByIdToDelete] (Procedure)
+       [dbo].[spRequests_Insert] (Procedure)
+       [dbo].[spRequests_StatusWork] (Procedure)

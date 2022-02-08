@@ -1,0 +1,59 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[AdGroups] (Table)
+       [dbo].[Cities] (Table)
+       [dbo].[Countries] (Table)
+       [dbo].[EmailGroups] (Table)
+       [dbo].[EmailsToSend] (Table)
+       [dbo].[Prices] (Table)
+       [dbo].[RequestInfo] (Table)
+       [dbo].[Requests] (Table)
+       [dbo].[RequestTypes] (Table)
+       [dbo].[Smtp] (Table)
+       [dbo].[Suppliers] (Table)
+       [dbo].[Transporters] (Table)
+       [dbo].[TransportTypes] (Table)
+       [dbo].[Users] (Table)
+       [dbo].[spAdGroups_All] (Procedure)
+       [dbo].[spCities_All] (Procedure)
+       [dbo].[spCities_AllForACountry] (Procedure)
+       [dbo].[spCities_AllWithCountries] (Procedure)
+       [dbo].[spCities_GetById] (Procedure)
+       [dbo].[spCountries_All] (Procedure)
+       [dbo].[spCountries_Delete] (Procedure)
+       [dbo].[spCountries_GetById] (Procedure)
+       [dbo].[spPrices_AllSummary] (Procedure)
+       [dbo].[spPrices_CountryAndCityHome] (Procedure)
+       [dbo].[spPrices_Delete] (Procedure)
+       [dbo].[spPrices_GetById] (Procedure)
+       [dbo].[spPrices_Insert] (Procedure)
+       [dbo].[spRequestTypes_All] (Procedure)
+       [dbo].[spSuppliers_All] (Procedure)
+       [dbo].[spSuppliers_AllWithoutHome] (Procedure)
+       [dbo].[spSuppliers_Delete] (Procedure)
+       [dbo].[spSuppliers_GetById] (Procedure)
+       [dbo].[spSuppliers_GetByIdWithIds] (Procedure)
+       [dbo].[spSuppliers_Insert] (Procedure)
+       [dbo].[spSuppliers_JustHome] (Procedure)
+       [dbo].[spSuppliers_Update] (Procedure)
+       [dbo].[spTransporters_All] (Procedure)
+       [dbo].[spTransporters_Delete] (Procedure)
+       [dbo].[spTransporters_GetById] (Procedure)
+       [dbo].[spTransporters_Insert] (Procedure)
+       [dbo].[spTransporters_Update] (Procedure)
+       [dbo].[spUsers_All] (Procedure)
+       [dbo].[spUsers_GetByWA] (Procedure)
+       [dbo].[spUsers_Insert] (Procedure)
+       [dbo].[spUsers_Update] (Procedure)
+
+** Supporting actions

@@ -1,0 +1,342 @@
+﻿@model IOToolDataLibrary.Models.CustomTables.NewRequestModel
+
+@{ ViewData["Title"] = "Index"; }
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">New Request</h5>
+                    <h6 class="card-subtitle text-muted">Here you can submit a new request in IOTool.</h6>
+                </div>
+                <div class="card-body">
+                    <form asp-controller="Requests" asp-action="Index">
+                        <div class="row col-lg-12 col-md-12">
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("RequestTypeId")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                <select class="form-control select2" id="RequestTypeId" name="RequestTypeId" style="width:100%;"></select>
+                                @Html.ValidationMessage("RequestTypeId", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("FromId")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                <select class="form-control select2" id="FromId" name="FromId" style="width:100%;"></select>
+                                @Html.ValidationMessage("FromId", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("ToId")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                <select class="form-control select2" id="ToId" name="ToId" style="width:100%;"></select>
+                                @Html.ValidationMessage("ToId", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("ETD")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                <input class="form-control" type="text" id="ETD" name="ETD" readonly />
+                                @Html.ValidationMessage("ETD", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("ETA")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                <input class="form-control" type="text" id="ETA" name="ETA" readonly />
+                                @Html.ValidationMessage("ETA", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("NrPallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                <input class="form-control" type="number" id="NrPallets" name="NrPallets" min="1" max="64" oninput="validity.valid||(value='');" />
+                                @Html.ValidationMessage("NrPallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Weight")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                <input class="form-control" type="number" id="Weight" name="Weight" min="1" max="2400" oninput="validity.valid||(value='');" />
+                                @Html.ValidationMessage("Weight", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("CommentRequester")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                <textarea class="form-control" id="CommentRequester" name="CommentRequester" rows="5" style="resize:none"></textarea>
+                                @Html.ValidationMessage("CommentRequester", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6" style="visibility:hidden;">
+                                <h5>@Html.DisplayName("Price")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6" style="visibility:hidden;">
+                                @Html.TextBoxFor(m => m.Price, new { @class = "form-control", @min = "1", @oninput = "validity.valid||(value='');", @readonly = true })
+                                @Html.ValidationMessage("Price", "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="col-lg-4 col-md-6" style="visibility:hidden;">
+                                <h5>@Html.DisplayName("PricePallet")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6" style="visibility:hidden;">
+                                @Html.TextBoxFor(m => m.PricePallet, new { @class = "form-control", @min = "1", @oninput = "validity.valid||(value='');", @readonly = true })
+                                @Html.ValidationMessage("PricePallet", "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="col-lg-4 col-md-6" style="visibility:hidden;">
+                                <h5>@Html.DisplayName("PremiumFreight")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6" style="visibility:hidden;">
+                                @Html.TextBoxFor(m => m.PremiumFreight, new { @class = "form-control", @oninput = "validity.valid||(value='');", @readonly = true })
+                                @Html.ValidationMessage("PremiumFreight", "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div id="txt_Message"><h2></h2></div>
+                        <br />
+
+                        <button class="btn btn-card" type="submit" id="btn_submit" style="visibility:hidden;">Submit Request</button>
+                        <br />
+                        <br />
+                    </form>
+                    <button class="btn btn-card" id="btn_Calculate">Calculate cost</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var requestTypeValue;
+    $("#RequestTypeId").select2();
+    $("#FromId").select2();
+    $("#ToId").select2();
+
+    var tomorrow = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+
+    $("#ETD").daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        autoUpdateInput: false,
+        minDate: tomorrow,
+        locale: {
+            cancelLabel: 'Clear'
+        }
+    });
+    $("#ETA").daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        autoUpdateInput: false,
+        minDate: tomorrow,
+        locale: {
+            cancelLabel: 'Clear'
+        }
+    });
+
+    $('input[name="ETD"]').on('apply.daterangepicker', function (ev, picker) {
+        $(this).val(picker.startDate.format('MM/DD/YYYY'));
+    });
+    $('input[name="ETA"]').on('apply.daterangepicker', function (ev, picker) {
+        $(this).val(picker.startDate.format('MM/DD/YYYY'));
+    });
+
+    FillSelectRequestTypes();
+
+    $("#RequestTypeId").on('change', function () {
+        requestTypeValue = $("#RequestTypeId").find(":selected").val();
+        if (requestTypeValue == 1) {
+            UnblockFields();
+            CleanFields();
+            FillSelectFrom();
+            FillSelectToHome();
+        } else if (requestTypeValue == 2) {
+            UnblockFields();
+            CleanFields();
+            FillSelectFromHome();
+            FillSelectTo();
+        }
+    });
+
+    $(document).off("click", "#btn_Calculate").on("click", "#btn_Calculate", function () {
+        ShowDivLoad();
+        var requestType = $("#RequestTypeId").find(":selected").val();
+        var from = $("#FromId").find(":selected").val();
+        var to = $("#ToId").find(":selected").val();
+        var etd = $("#ETD").val();
+        var eta = $("#ETA").val();
+        var nrPallets = $("#NrPallets").val();
+        var weight = $("#Weight").val();
+        var remarks = $("#CommentRequester").val();
+
+        var startDay = new Date(etd);
+        var endDay = new Date(eta);
+
+        var Difference_In_Time = endDay.getTime() - startDay.getTime();
+        var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+
+        if (Difference_In_Days > 0) {
+            if (requestType > 0 && from > 0 && to > 0 && etd.length == 10 && eta.length == 10 && nrPallets.length > 0 && weight.length > 0 && remarks.length > 0) {
+                $.ajax({
+                    type: "POST",
+                    url: "/DPs/Calculate",
+                    data: {
+                        requestType: requestType,
+                        from: from,
+                        to: to,
+                        etd: etd,
+                        eta: eta,
+                        nrPallets: nrPallets,
+                        weight: weight
+                    },
+                    success: function (result) {
+                        $("div#txt_Message h2").html(result.message);
+                        $("#Price").val(result.totalPrice);
+                        $("#PricePallet").val(result.palletPrice);
+                        $("#PremiumFreight").val(result.premiumFreight);
+                        $("#btn_submit").css("visibility", "visible"); //hidden
+                        HideDivLoad();
+                    },
+                    error: function () {
+
+                        HideDivLoad();
+                    }
+                });
+            }
+            else {
+                toastr.warning("All fields are required.");
+                HideDivLoad();
+            }
+        }
+        else {
+            toastr.warning("Difference between selected dates must be a positive value.");
+            HideDivLoad();
+        }
+    });
+
+    function FillSelectRequestTypes() {
+        //ShowDivLoad();
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FillSelectRequestTypes",
+            success: function (allRequestTypes) {
+                $("#RequestTypeId").empty();
+                $("#RequestTypeId").append('<option value=0>Please select</option>');
+                $.each(allRequestTypes, function (_indexallRequestTypes, itemallRequestTypes) {
+                    $("#RequestTypeId").append('<option value=' + itemallRequestTypes.id + ' >' + itemallRequestTypes.type + '</option>');
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+
+    function FillSelectFromHome() {
+        ShowDivLoad();
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FillSelectHome",
+            success: function (justHome) {
+                $("#FromId").empty();
+                $("#FromId").append('<option value=0>Please select</option>');
+                $.each(justHome, function (_indexjustHome, itemjustHome) {
+                    $("#FromId").append('<option value=' + itemjustHome.id + ' selected="selected" >' + itemjustHome.name + ' - ' + itemjustHome.city + ' - ' + itemjustHome.country + '</option>');
+                    // $("#Location").val(itemjustHome.city + ' - ' + itemjustHome.country);
+                });
+                //$('#FromId').prop('disabled', 'disabled');
+                //$('#Location').prop('disabled', 'disabled');
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+    function FillSelectToHome() {
+        ShowDivLoad();
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FillSelectHome",
+            success: function (justHome) {
+                $("#ToId").empty();
+                $("#ToId").append('<option value=0>Please select</option>');
+                $.each(justHome, function (_indexjustHome, itemjustHome) {
+                    $("#ToId").append('<option value=' + itemjustHome.id + ' selected="selected" >' + itemjustHome.name + ' - ' + itemjustHome.city + ' - ' + itemjustHome.country + '</option>');
+                    //   $("#DeliveryLocation").val(itemjustHome.city + ' - ' + itemjustHome.country);
+                });
+                //$('#ToId').prop('disabled', 'disabled');
+                //$('#DeliveryLocation').prop('disabled', 'disabled');
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+
+    function FillSelectFrom() {
+        ShowDivLoad();
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FillSelectSupplier",
+            success: function (allSuppliers) {
+                $("#FromId").empty();
+                $("#FromId").append('<option value=0>Please select</option>');
+                $.each(allSuppliers, function (_indexallSuppliers, itemallSuppliers) {
+                    $("#FromId").append('<option value=' + itemallSuppliers.id + ' >' + itemallSuppliers.name + ' - ' + itemallSuppliers.city + ' - ' + itemallSuppliers.country + '</option>');
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+    function FillSelectTo() {
+        ShowDivLoad();
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FillSelectSupplier",
+            success: function (allSuppliers) {
+                $("#ToId").empty();
+                $("#ToId").append('<option value=0>Please select</option>');
+                $.each(allSuppliers, function (_indexallSuppliers, itemallSuppliers) {
+                    $("#ToId").append('<option value=' + itemallSuppliers.id + ' >' + itemallSuppliers.name + ' - ' + itemallSuppliers.city + ' - ' + itemallSuppliers.country + '</option>');
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+
+    function UnblockFields() {
+        //$('#FromId').prop('disabled', false);
+        //$('#Location').prop('disabled', false);
+        //$('#ToId').prop('disabled', false);
+        //$('#DeliveryLocation').prop('disabled', false);
+        //document.getElementById('Input').readOnly = true;
+    }
+    function CleanFields() {
+        $('#Location').val('');
+        $('#DeliveryLocation').val('');
+    }
+
+</script>

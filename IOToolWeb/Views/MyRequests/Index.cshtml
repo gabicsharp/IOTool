@@ -1,0 +1,159 @@
+﻿@model IEnumerable<IOToolDataLibrary.Models.CustomTables.NewMyRequestSummaryModel>
+
+@{ ViewData["Title"] = "Index"; }
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">My Request</h5>
+                    <h6 class="card-subtitle text-muted">List with all my requests registred in IOTool.</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped" id="table_myRequests" width="100%">
+                        <thead class="thead-grey">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RequestType)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.From)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.To)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ETD)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ETA)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PalletNr)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Weight)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CommentRequester)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Status)
+                                </th>
+                                <th>
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RequestType)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.From)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.To)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ETD.Month)/@Html.DisplayFor(modelItem => item.ETD.Day)/@Html.DisplayFor(modelItem => item.ETD.Year)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ETA.Month)/@Html.DisplayFor(modelItem => item.ETA.Day)/@Html.DisplayFor(modelItem => item.ETA.Year)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PalletNr)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Weight)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CommentRequester)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Status)
+                                    </td>
+                                    <td>
+                                        @if (item.Status == "Open")
+                                        {
+                                            <a asp-action="Edit" asp-route-id="@item.Id" class="align-middle mr-2 fas fa-fw fa-edit IconsTable"></a>
+                                            <a asp-action="Delete" asp-route-id="@item.Id" class="align-middle mr-2 fas fa-fw fa-trash-alt IconsTable"></a>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RequestType)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.From)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.To)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ETD)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ETA)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PalletNr)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Weight)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CommentRequester)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Status)
+                                </th>
+                                <th>
+                                    Action
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="mb-3">
+                        <a asp-action="Index" asp-controller="Requests" class="btn btn-card"><i class="fas fa-check"> Add a new request</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$('#table_myRequests tfoot th').each(function () {
+    var title = $('#example thead th').eq($(this).index()).text();
+    $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+});
+
+$('#table_myRequests').DataTable({
+    dom: 'Bfrtip',
+    buttons: [
+        { extend: 'csv', title: 'IOTool All My Requets', className: 'btn btn-table' },
+        { extend: 'print', className: 'btn btn-table' }
+    ],
+    responsive: true,
+});
+var table = $('#table_myRequests').DataTable();
+
+table.columns().every(function () {
+    var that = this;
+
+    $('input', this.footer()).on('keyup change', function () {
+        that
+            .search(this.value)
+            .draw();
+    });
+});
+</script>

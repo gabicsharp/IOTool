@@ -1,0 +1,32 @@
+﻿@model IOToolDataLibrary.Models.CustomTables.NewSupplierModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@if (Model is null)
+{
+    <h4>The requested record was not found.</h4>
+}
+else
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Supplier Delete</h5>
+                        <h6 class="card-subtitle text-muted">Action to delete a supplier who are registred in IOTool.</h6>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">  Are you sure you want to delete <b>@Model.Name</b> from your list of suppliers?</p>
+                        <form asp-action="Delete">
+                            <input type="submit" value="Delete" class="btn btn-card" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

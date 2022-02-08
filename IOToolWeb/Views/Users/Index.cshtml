@@ -1,0 +1,190 @@
+﻿@model IEnumerable<IOToolDataLibrary.Models.UsersModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    .th, td {
+        white-space: nowrap;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Users List</h5>
+                    <h6 class="card-subtitle text-muted">List with all users who are registred in IOTool.</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped" style="width:100%;" id="table_users">
+                        <thead class="thead-grey">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Id)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Function)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Department)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Location)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CostCenter)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.WindowsAccount)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AccountRights)
+                                </th>
+                                @*<th>
+                                        Status
+                                    </th>*@
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Function)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Department)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Location)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CostCenter)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.WindowsAccount)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AccountRights)
+                                    </td>
+                                    @*<td>
+                                            @if (item.Active == 0)
+                                            {
+                                                <button class="btn btn-danger">Disabled</button>
+                                            }
+                                            else if (item.Active == 1)
+                                            {
+                                                <button class="btn btn-primary">Active</button>
+                                            }
+                                        </td>*@
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Id)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Function)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Department)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Location)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CostCenter)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.WindowsAccount)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AccountRights)
+                                </th>
+                                @*<th>
+                                        Status
+                                    </th>*@
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#table_users tfoot th').each(function () {
+        var title = $('#example thead th').eq($(this).index()).text();
+        $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+    });
+
+    // DataTable
+    $('#table_users').DataTable({
+        dom: 'Bfrtip',
+        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        buttons: [
+            { extend: 'csv', title: 'IOTool All Users', className: 'btn btn-table' },
+            { extend: 'print', className: 'btn btn-table' },
+        ],
+        'language': {
+            'loadingRecords': '<div class="LoadGif"><p class="PLoadGif"><i class="spinner-grow text-dark mr-2" role="status"></i><i class= "spinner-grow text-primary mr-2" role="status" ></i><i class="spinner-grow text-secondary mr-2" role="status"></i><i class="spinner-grow text-success mr-2" role="status"></i><i class="spinner-grow text-warning mr-2" role="status"></i><i class="spinner-grow text-info mr-2" role="status"></i></p></div>'
+        },
+
+        "order": [[0, "desc"]],
+        responsive: true,
+        processing: true,
+        "columnDefs": [
+            { className: "text-center", "targets": [0], "visible": false },
+            { className: "text-center", "targets": [1] },
+            { className: "text-center", "targets": [2], "visible": false },
+            { className: "text-center", "targets": [3], "visible": false },
+            { className: "text-center", "targets": [4], "visible": false },
+            { className: "text-center", "targets": [5] },
+            { className: "text-center", "targets": [6] },
+            { className: "text-center", "targets": [7] },
+            { className: "text-center", "targets": [8] }
+        ],
+    });
+
+    /*   datatablesButtons.buttons().container().appendTo("#table_users_wrapper .col-md-6:eq(0)")*/
+
+    var table = $('#table_users').DataTable();
+
+    // Apply the search
+    table.columns().every(function () {
+        var that = this;
+
+        $('input', this.footer()).on('keyup change', function () {
+            that
+                .search(this.value)
+                .draw();
+        });
+    });
+
+    //$('#container').css('display', 'block');
+    //table.columns.adjust().draw();
+</script>

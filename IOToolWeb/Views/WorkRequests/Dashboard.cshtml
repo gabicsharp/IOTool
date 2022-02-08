@@ -1,0 +1,225 @@
+﻿@model IEnumerable<IOToolDataLibrary.Models.CustomTables.NewRequestClosedModel>
+
+@{ ViewData["Title"] = "Dashboard"; }
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Request List</h5>
+                    <h6 class="card-subtitle text-muted">List with all requests closed in IOTool.</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped" id="table_dashboard" width="100%">
+                        <thead class="thead-grey">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Month)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RequestType)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TransportType)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Week)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ETD)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ETA)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.From)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FromLocation)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.To)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ToLocation)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Materials)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Transporter)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AWB)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Price)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CostCenter)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BillNr)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PalletNr)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PricePallet)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Month)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TransportType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Week)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ETD.Month)/@Html.DisplayFor(modelItem => item.ETD.Day)/@Html.DisplayFor(modelItem => item.ETD.Year)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ETA.Month)/@Html.DisplayFor(modelItem => item.ETA.Day)/@Html.DisplayFor(modelItem => item.ETA.Year)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.From)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FromLocation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.To)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ToLocation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Materials)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Transporter)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AWB)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Price)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CostCenter)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BillNr)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PalletNr)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PricePallet)
+                                </td>
+
+                            </tr>
+}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Month)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RequestType)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TransportType)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Week)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ETD)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ETA)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.From)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FromLocation)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.To)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ToLocation)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Materials)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Transporter)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AWB)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Price)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CostCenter)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BillNr)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PalletNr)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PricePallet)
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#table_dashboard tfoot th').each(function () {
+        var title = $('#example thead th').eq($(this).index()).text();
+        $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+    });
+
+    $('#table_dashboard').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            { extend: 'csv', title: 'IOTool Dashboard', className: 'btn btn-table' },
+            { extend: 'print', className: 'btn btn-table' }
+        ],
+        responsive: true,
+    });
+    var table = $('#table_dashboard').DataTable();
+
+    table.columns().every(function () {
+        var that = this;
+
+        $('input', this.footer()).on('keyup change', function () {
+            that
+                .search(this.value)
+                .draw();
+        });
+    });
+</script>

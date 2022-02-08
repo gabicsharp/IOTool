@@ -1,0 +1,6 @@
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolData\bin\Debug\IOToolData.dacpac
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolData\bin\Debug\IOToolData.dll
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolData\bin\Debug\IOToolData.pdb
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolData\obj\Debug\IOToolData.dll
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolData\obj\Debug\IOToolData.pdb
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolData\obj\Debug\IOToolData.sqlproj.AssemblyReference.cache

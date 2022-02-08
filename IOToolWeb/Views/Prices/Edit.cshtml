@@ -1,0 +1,325 @@
+﻿@model IOToolDataLibrary.Models.CustomTables.NewPriceModel
+
+@{ ViewData["Title"] = "Update"; }
+
+@if (Model is null)
+{
+<h4>The requested record was not found.</h4> }
+else
+{
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Update Price</h5>
+                    <h6 class="card-subtitle text-muted">Here you can update a price in IOTool.</h6>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit">
+                        <div class="row col-lg-12 col-md-12">
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("TransporterName")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.TransporterName, new { @class = "form-control", @readonly = true })
+                                @Html.ValidationMessage("TransporterName", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("LaneName")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.LaneName, new { @class = "form-control", @readonly = true })
+                                @Html.ValidationMessage("LaneName", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("OriginCountry")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.OriginCountry, new { @class = "form-control", @readonly = true })
+                                @Html.ValidationMessage("OriginCountry", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("OriginCity")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.OriginCity, new { @class = "form-control", @readonly = true })
+                                @Html.ValidationMessage("OriginCity", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("DestinationCountry")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.DestinationCountry, new { @class = "form-control", @readonly = true })
+                                @Html.ValidationMessage("DestinationCountry", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("DestinationCity")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.DestinationCity, new { @class = "form-control", @readonly = true })
+                                @Html.ValidationMessage("DestinationCity", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("RequestType")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.RequestType, new { @class = "form-control", @readonly = true })
+                                @Html.ValidationMessage("RequestType", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Minimum")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.Minimum, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("Minimum", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From1To4Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From1To4Pallets, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From1To4Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From5To8Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From5To8Pallets, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From5To8Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From9To12Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From9To12Pallets, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From9To12Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From13To16Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From13To16Pallets, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From13To16Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From17To20Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From17To20Pallets, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From17To20Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From21To24Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From21To24Pallets, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From21To24Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From25To28Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From25To28Pallets, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From25To28Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From29To32Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From29To32Pallets, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From29To32Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From33To36Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From33To36Pallets, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From33To36Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From37To40Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From37To40Pallets, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From37To40Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From41To44Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From41To44Pallets, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From41To44Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From45To48Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From45To48Pallets, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From45To48Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From53To56Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From53To56Pallets, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From53To56Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From57To60Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From57To60Pallets, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From57To60Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From61To64Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From61To64Pallets, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From61To64Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Maximum")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.Maximum, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("Maximum", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("ShipmentFrequencyLTL")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.ShipmentFrequencyLTL, new { @class = "form-control", @type = "text" })
+                                @Html.ValidationMessage("ShipmentFrequencyLTL", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("TransitTimeGroupage")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.TransitTimeGroupage, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("TransitTimeGroupage", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("TransitTimeLTL")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.TransitTimeLTL, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("TransitTimeLTL", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("CommentsLTL")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.CommentsLTL, new { @class = "form-control", @type = "text" })
+                                @Html.ValidationMessage("CommentsLTL", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Tons3_5")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.Tons3_5, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("Tons3_5", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("TransitTime3_5Tons")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.TransitTime3_5Tons, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("TransitTime3_5Tons", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("ShipmentFrequency3_5Tons")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.ShipmentFrequency3_5Tons, new { @class = "form-control", @type = "text" })
+                                @Html.ValidationMessage("ShipmentFrequency3_5Tons", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Tons7_5")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.Tons7_5, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("Tons7_5", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("ShipmentFrequency7_5Tons")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.ShipmentFrequency7_5Tons, new { @class = "form-control", @type = "text" })
+                                @Html.ValidationMessage("ShipmentFrequency7_5Tons", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Tons24")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.Tons24, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("Tons24", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("ShipmentFrequency24Tons")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.ShipmentFrequency24Tons, new { @class = "form-control", @type = "text" })
+                                @Html.ValidationMessage("ShipmentFrequency24Tons", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("TransitTimeFTL")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.TransitTimeFTL, new { @class = "form-control", @type = "number", @min = "1", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("TransitTimeFTL", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("CommentsFTL")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.CommentsFTL, new { @class = "form-control", @type = "text" })
+                                @Html.ValidationMessage("CommentsFTL", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                        </div>
+                        <input type="submit" value="Update" class="btn btn-card" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}

@@ -1,0 +1,24 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Alter
+       [dbo].[Requests] (Table)
+
+** Supporting actions
+     Refresh
+       [dbo].[spRequests_GetById] (Procedure)
+       [dbo].[spRequests_GetByIdToDelete] (Procedure)
+       [dbo].[spRequests_GetByUser] (Procedure)
+       [dbo].[spRequests_Insert] (Procedure)
+       [dbo].[spRequests_StatusWork] (Procedure)
+
+The column Weight on table [dbo].[Requests] must be changed from NULL to NOT NULL. If the table contains data, the ALTER script may not work. To avoid this issue, you must add values to this column for all rows or mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+

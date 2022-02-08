@@ -1,0 +1,25 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[spCostCenters_All] (Procedure)
+       [dbo].[spEmailGroups_Get] (Procedure)
+       [dbo].[spEmailNotification_CreateEmail] (Procedure)
+       [dbo].[spEmailNotification_DeleteEmail] (Procedure)
+       [dbo].[spEmailNotification_UpdateEmail] (Procedure)
+       [dbo].[spMaterials_All] (Procedure)
+       [dbo].[spRequests_GetByIdToEdit] (Procedure)
+       [dbo].[spRequests_GetByIdToEditCalculation] (Procedure)
+       [dbo].[spRequests_UpdateByProcessor] (Procedure)
+       [dbo].[spSmtp_Get] (Procedure)
+       [dbo].[spTransportTypes_All] (Procedure)
+
+** Supporting actions

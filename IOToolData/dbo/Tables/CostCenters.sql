@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[CostCenters]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [CC] NVARCHAR(50) NOT NULL, 
+    [Active] INT NOT NULL
+)

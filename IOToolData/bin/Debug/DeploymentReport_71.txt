@@ -1,0 +1,25 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Prices]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Table rebuild
+       [dbo].[Prices] (Table)
+     Alter
+       [dbo].[spRequests_GetDashboard] (Procedure)
+
+** Supporting actions
+     Refresh
+       [dbo].[spPrices_AllSummary] (Procedure)
+       [dbo].[spPrices_Delete] (Procedure)
+       [dbo].[spPrices_GetById] (Procedure)
+       [dbo].[spPrices_GetByIdStandardModel] (Procedure)
+       [dbo].[spPrices_GetByIdToEdit] (Procedure)
+       [dbo].[spPrices_Insert] (Procedure)
+       [dbo].[spPrices_Update] (Procedure)

@@ -1,0 +1,10 @@
+D:\DSUsers\uidn3769\CodeShee\IOTool\ConsoleImportExcelPrices\bin\Debug\ConsoleImportExcelPrices.exe.config
+D:\DSUsers\uidn3769\CodeShee\IOTool\ConsoleImportExcelPrices\bin\Debug\ConsoleImportExcelPrices.exe
+D:\DSUsers\uidn3769\CodeShee\IOTool\ConsoleImportExcelPrices\bin\Debug\ConsoleImportExcelPrices.pdb
+D:\DSUsers\uidn3769\CodeShee\IOTool\ConsoleImportExcelPrices\bin\Debug\DocumentFormat.OpenXml.dll
+D:\DSUsers\uidn3769\CodeShee\IOTool\ConsoleImportExcelPrices\bin\Debug\DocumentFormat.OpenXml.xml
+D:\DSUsers\uidn3769\CodeShee\IOTool\ConsoleImportExcelPrices\obj\Debug\ConsoleImportExcelPrices.csproj.AssemblyReference.cache
+D:\DSUsers\uidn3769\CodeShee\IOTool\ConsoleImportExcelPrices\obj\Debug\ConsoleImportExcelPrices.csproj.CoreCompileInputs.cache
+D:\DSUsers\uidn3769\CodeShee\IOTool\ConsoleImportExcelPrices\obj\Debug\ConsoleImportExcelPrices.csproj.CopyComplete
+D:\DSUsers\uidn3769\CodeShee\IOTool\ConsoleImportExcelPrices\obj\Debug\ConsoleImportExcelPrices.exe
+D:\DSUsers\uidn3769\CodeShee\IOTool\ConsoleImportExcelPrices\obj\Debug\ConsoleImportExcelPrices.pdb

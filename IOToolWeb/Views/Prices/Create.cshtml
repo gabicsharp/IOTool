@@ -1,0 +1,550 @@
+﻿@model IOToolDataLibrary.Models.PricesModel
+
+@{ ViewData["Title"] = "Create"; }
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Add price</h5>
+                    <h6 class="card-subtitle text-muted">Here you can register a new price in IOTool.</h6>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div class="row col-lg-12 col-md-12">
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Id_RequestType")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                <select class="form-control select2" id="Id_RequestType" name="Id_RequestType" style="width:100%;"></select>
+                                @Html.ValidationMessage("Id_RequestType", "", new { @class = "text-danger" })
+                                <br />
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Id_Transporter")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                <select class="form-control select2" id="Id_Transporter" name="Id_Transporter" style="width:100%;"></select>
+                                @Html.ValidationMessage("Id_Transporter", "", new { @class = "text-danger" })
+                                <br />
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Id_OriginCountry")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                <select class="form-control select2" id="Id_OriginCountry" name="Id_OriginCountry" style="width:100%;"></select>
+                                @Html.ValidationMessage("Id_OriginCountry", "", new { @class = "text-danger" })
+                                <br />
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Id_OriginCity")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                <select class="form-control select2" id="Id_OriginCity" name="Id_OriginCity" style="width:100%;"></select>
+                                @Html.ValidationMessage("Id_OriginCity", "", new { @class = "text-danger" })
+                                <br />
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Id_DestinationCountry")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                <select class="form-control select2" id="Id_DestinationCountry" name="Id_DestinationCountry" style="width:100%;"></select>
+                                @Html.ValidationMessage("Id_DestinationCountry", "", new { @class = "text-danger" })
+                                <br />
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Id_DestinationCity")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                <select class="form-control select2" id="Id_DestinationCity" name="Id_DestinationCity" style="width:100%;"></select>
+                                @Html.ValidationMessage("Id_DestinationCity", "", new { @class = "text-danger" })
+                                <br />
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Minimum")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.Minimum, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("Minimum", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From1To4Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From1To4Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From1To4Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From5To8Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From5To8Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From5To8Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From9To12Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From9To12Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From9To12Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From13To16Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From13To16Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From13To16Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From17To20Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From17To20Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From17To20Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From21To24Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From21To24Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From21To24Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From25To28Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From25To28Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From25To28Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From29To32Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From29To32Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From29To32Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From33To36Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From33To36Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From33To36Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From37To40Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From37To40Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From37To40Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From41To44Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From41To44Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From41To44Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From45To48Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From45To48Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From45To48Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From49To52Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From49To52Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From49To52Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From53To56Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From53To56Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From53To56Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From57To60Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From57To60Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From57To60Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("From61To64Pallets")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.From61To64Pallets, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("From61To64Pallets", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Maximum")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.Maximum, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("Maximum", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("ShipmentFrequencyLTL")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.ShipmentFrequencyLTL, new { @class = "form-control", @type = "text" })
+                                @Html.ValidationMessage("ShipmentFrequencyLTL", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("TransitTimeGroupage")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.TransitTimeGroupage, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("TransitTimeGroupage", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("TransitTimeLTL")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.TransitTimeLTL, new { @class = "form-control", @type = "text" })
+                                @Html.ValidationMessage("TransitTimeLTL", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("CommentsLTL")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.CommentsLTL, new { @class = "form-control", @type = "text" })
+                                @Html.ValidationMessage("CommentsLTL", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Tons3_5")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.Tons3_5, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("Tons3_5", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("TransitTime3_5Tons")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.TransitTime3_5Tons, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("TransitTime3_5Tons", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("ShipmentFrequency3_5Tons")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.ShipmentFrequency3_5Tons, new { @class = "form-control", @type = "text" })
+                                @Html.ValidationMessage("ShipmentFrequency3_5Tons", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Tons7_5")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.Tons7_5, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("Tons7_5", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("ShipmentFrequency7_5Tons")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.ShipmentFrequency7_5Tons, new { @class = "form-control", @type = "text" })
+                                @Html.ValidationMessage("ShipmentFrequency7_5Tons", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("Tons24")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.Tons24, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("Tons24", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("ShipmentFrequency24Tons")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.ShipmentFrequency24Tons, new { @class = "form-control", @type = "text" })
+                                @Html.ValidationMessage("ShipmentFrequency24Tons", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("TransitTimeFTL")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.TransitTimeFTL, new { @class = "form-control", @type = "number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("TransitTimeFTL", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h5>@Html.DisplayName("CommentsFTL")</h5>
+                            </div>
+                            <div class="col-lg-8 col-md-6">
+                                @Html.TextBoxFor(m => m.CommentsFTL, new { @class = "form-control", @type = "text" })
+                                @Html.ValidationMessage("CommentsFTL", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                        </div>
+                        <input type="submit" value="Create" class="btn btn-card" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var requestTypeValue, originCountryValue, originCityValue, destinationCountryValue, originCityValue;
+
+    AddSelect2();
+    FillSelectRequestTypes();
+    FillSelectTransporter();
+
+    $("#Id_RequestType").on('change', function () {
+        requestTypeValue = $("#Id_RequestType").find(":selected").val();
+        if (requestTypeValue == 1) {
+            UnblockFields();
+            CleanFields();
+            FillSelectOriginCountries();
+            FillSelectDestinationCountriesHome();
+        } else if (requestTypeValue == 2) {
+            UnblockFields();
+            CleanFields();
+            FillSelectOriginCountriesHome();
+            FillSelectDestinationCountries();
+        }
+    });
+
+    $("#Id_DestinationCountry").on('change', function () {
+        if ($("#Id_DestinationCountry").find(":selected").val() > 0) {
+            FillSelectDestinationCities();
+        }
+    });
+
+    $("#Id_OriginCountry").on('change', function () {
+        if ($("#Id_OriginCountry").find(":selected").val() > 0) {
+            FillSelectOriginCities();
+        }
+    });
+
+
+    function FillSelectOriginCountriesHome() {
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FillPriceCountyandCityHome",
+            success: function (CountryAndCityHome) {
+                $("#Id_OriginCountry").empty();
+                $("#Id_OriginCountry").append('<option value=0>Please select</option>');
+                $("#Id_OriginCity").empty();
+                $("#Id_OriginCity").append('<option value=0>Please select</option>');
+                for (var i = 0; i < 1; i++) {
+                    $("#Id_OriginCountry").append('<option value=' + CountryAndCityHome[i].idCountry + ' selected="selected" >' + CountryAndCityHome[i].country + '</option>');
+                    $("#Id_OriginCity").append('<option value=' + CountryAndCityHome[i].idCity + ' selected="selected" >' + CountryAndCityHome[i].city + '</option>');
+                }
+                $('#Id_OriginCountry').prop('readonly', true);
+                $('#Id_OriginCity').prop('readonly', true);
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+    function FillSelectDestinationCountriesHome() {
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FillPriceCountyandCityHome",
+            success: function (CountryAndCityHome) {
+                $("#Id_DestinationCountry").empty();
+                $("#Id_DestinationCountry").append('<option value=0>Please select</option>');
+                $("#Id_DestinationCity").empty();
+                $("#Id_DestinationCity").append('<option value=0>Please select</option>');
+                for (var i = 0; i < 1; i++) {
+                    $("#Id_DestinationCountry").append('<option value=' + CountryAndCityHome[i].idCountry + ' selected="selected" >' + CountryAndCityHome[i].country + '</option>');
+                    $("#Id_DestinationCity").append('<option value=' + CountryAndCityHome[i].idCity + ' selected="selected" >' + CountryAndCityHome[i].city + '</option>');
+                }
+                $('#Id_DestinationCountry').prop('readonly', true);
+                $('#Id_DestinationCity').prop('readonly', true);
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+
+    function FillSelectDestinationCountries() {
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FiilCountries",
+            success: function (CountryAndCityHome) {
+                $("#Id_DestinationCountry").empty();
+                $("#Id_DestinationCountry").append('<option value=0>Please select</option>');
+                $.each(CountryAndCityHome, function (_index, item) {
+                    $("#Id_DestinationCountry").append('<option value=' + item.id + ' >' + item.name + '</option>');
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+    function FillSelectDestinationCities() {
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FiilCities",
+            data: {
+                Id_Country: $("#Id_DestinationCountry").find(":selected").val()
+            },
+            success: function (allCities) {
+                $("#Id_DestinationCity").empty();
+                $("#Id_DestinationCity").append('<option value=0>Please select</option>');
+                $.each(allCities, function (_index, item) {
+                    $("#Id_DestinationCity").append('<option value=' + item.id + ' >' + item.name + '</option>');
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+
+    function FillSelectOriginCountries() {
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FiilCountries",
+            success: function (CountryAndCityHome) {
+                $("#Id_OriginCountry").empty();
+                $("#Id_OriginCountry").append('<option value=0>Please select</option>');
+                $.each(CountryAndCityHome, function (_index, item) {
+                    $("#Id_OriginCountry").append('<option value=' + item.id + ' >' + item.name + '</option>');
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+    function FillSelectOriginCities() {
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FiilCities",
+            data: {
+                Id_Country: $("#Id_OriginCountry").find(":selected").val()
+            },
+            success: function (allCities) {
+                $("#Id_OriginCity").empty();
+                $("#Id_OriginCity").append('<option value=0>Please select</option>');
+                $.each(allCities, function (_index, item) {
+                    $("#Id_OriginCity").append('<option value=' + item.id + ' >' + item.name + '</option>');
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+
+    function UnblockFields() {
+        $('#Id_OriginCountry').prop('disabled', false);
+        $('#Id_OriginCity').prop('disabled', false);
+        $('#Id_DestinationCountry').prop('disabled', false);
+        $('#Id_DestinationCity').prop('disabled', false);
+    }
+    function CleanFields() {
+        $("#Id_OriginCountry").empty();
+        $("#Id_OriginCity").empty();
+        $("#Id_DestinationCountry").empty();
+        $("#Id_DestinationCity").empty();
+    }
+
+    function FillSelectRequestTypes() {
+        //ShowDivLoad();
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FillSelectRequestTypes",
+            success: function (allRequestTypes) {
+                $("#Id_RequestType").empty();
+                $("#Id_RequestType").append('<option value=0>Please select</option>');
+                $.each(allRequestTypes, function (_indexallRequestTypes, itemallRequestTypes) {
+                    $("#Id_RequestType").append('<option value=' + itemallRequestTypes.id + ' >' + itemallRequestTypes.type + '</option>');
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+
+    function FillSelectTransporter() {
+        //ShowDivLoad();
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FillTransporters",
+            success: function (allTransporters) {
+                $("#Id_Transporter").empty();
+                $("#Id_Transporter").append('<option value=0>Please select</option>');
+                $.each(allTransporters, function (_indexallTransporters, itemallTransporters) {
+                    $("#Id_Transporter").append('<option value=' + itemallTransporters.id + ' >' + itemallTransporters.name + '</option>');
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+
+    function AddSelect2() {
+        $("#Id_RequestType").select2();
+        $("#Id_Transporter").select2();
+        $("#Id_OriginCountry").select2();
+        $("#Id_OriginCity").select2();
+        $("#Id_DestinationCountry").select2();
+        $("#Id_DestinationCity").select2();
+    }
+
+</script>

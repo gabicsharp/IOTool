@@ -1,0 +1,136 @@
+﻿@model IOToolDataLibrary.Models.TransportersModel
+
+@{ ViewData["Title"] = "Create"; }
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Add transporter</h5>
+                    <h6 class="card-subtitle text-muted">Here you can register a new transporter in IOTool.</h6>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div class="row col-lg-12 col-md-12">
+                            <div class="col-lg-3 col-md-6">
+                                <h5>@Html.DisplayName("Name")</h5>
+                            </div>
+                            <div class="col-lg-9 col-md-6">
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                                @Html.ValidationMessage("Name", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <h5>@Html.DisplayName("Email")</h5>
+                            </div>
+                            <div class="col-lg-9 col-md-6">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessage("Email", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <h5>@Html.DisplayName("PhoneNumber")</h5>
+                            </div>
+                            <div class="col-lg-9 col-md-6">
+                                @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @type="number", @oninput = "validity.valid||(value='');" })
+                                @Html.ValidationMessage("PhoneNumber", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <h5>@Html.DisplayName("Id_Country")</h5>
+                            </div>
+                            <div class="col-lg-9 col-md-6">
+                                <select class="form-control select2" id="Id_Country" name="Id_Country" style="width:100%;"></select>
+                                @Html.ValidationMessage("Id_Country", "", new { @class = "text-danger" })
+                                <br />
+                                <br />
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <h5>@Html.DisplayName("Id_City")</h5>
+                            </div>
+                            <div class="col-lg-9 col-md-6">
+                                <select class="form-control select2" id="Id_City" name="Id_City" style="width:100%;"></select>
+                                @Html.ValidationMessage("Id_City", "", new { @class = "text-danger" })
+                                <br />
+                                <br />
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <h5>@Html.DisplayName("Address")</h5>
+                            </div>
+                            <div class="col-lg-9 col-md-6">
+                                @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                                @Html.ValidationMessage("Address", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <h5>@Html.DisplayName("Zip")</h5>
+                            </div>
+                            <div class="col-lg-9 col-md-6">
+                                @Html.TextBoxFor(m => m.Zip, new { @class = "form-control" })
+                                @Html.ValidationMessage("Zip", "", new { @class = "text-danger" })
+                                <br />
+                            </div>
+                        </div>
+                        <input type="submit" value="Create" class="btn btn-card" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var countryValue;
+    $("#Id_Country").select2();
+    $("#Id_City").select2();
+
+    FillSelectCountries();
+
+    $("#Id_Country").on('change', function () {
+        countryValue = $("#Id_Country").find(":selected").val();
+        FillSelectCities();
+    });
+
+    function FillSelectCountries() {
+        //ShowDivLoad();
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FiilCountries",
+            success: function (allCountries) {
+                $("#Id_Country").empty();
+                $("#Id_Country").append('<option value=0>Please select</option>');
+                $.each(allCountries, function (_indexallCountries, itemallCountries) {
+                    $("#Id_Country").append('<option value=' + itemallCountries.id + ' >' + itemallCountries.name + '</option>');
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+
+    function FillSelectCities() {
+        //ShowDivLoad();
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FiilCities",
+            data: {
+                Id_Country: countryValue
+            },
+            success: function (allCities) {
+                $("#Id_City").empty();
+                $("#Id_City").append('<option value=0>Please select</option>');
+                $.each(allCities, function (_indexallCities, itemallCities) {
+                    $("#Id_City").append('<option value=' + itemallCities.id + ' >' + itemallCities.name + '</option>');
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+</script>

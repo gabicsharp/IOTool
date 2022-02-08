@@ -1,0 +1,12 @@
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolDataLibrary\bin\Release\net5.0\IOToolDataLibrary.deps.json
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolDataLibrary\bin\Release\net5.0\IOToolDataLibrary.dll
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolDataLibrary\bin\Release\net5.0\ref\IOToolDataLibrary.dll
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolDataLibrary\bin\Release\net5.0\IOToolDataLibrary.pdb
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolDataLibrary\obj\Release\net5.0\IOToolDataLibrary.csproj.AssemblyReference.cache
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolDataLibrary\obj\Release\net5.0\IOToolDataLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolDataLibrary\obj\Release\net5.0\IOToolDataLibrary.AssemblyInfoInputs.cache
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolDataLibrary\obj\Release\net5.0\IOToolDataLibrary.AssemblyInfo.cs
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolDataLibrary\obj\Release\net5.0\IOToolDataLibrary.csproj.CoreCompileInputs.cache
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolDataLibrary\obj\Release\net5.0\IOToolDataLibrary.dll
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolDataLibrary\obj\Release\net5.0\ref\IOToolDataLibrary.dll
+D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolDataLibrary\obj\Release\net5.0\IOToolDataLibrary.pdb

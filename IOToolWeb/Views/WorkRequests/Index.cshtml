@@ -1,0 +1,73 @@
+﻿@model IEnumerable<IOToolDataLibrary.Models.CustomTables.NewWorkRequestModel>
+
+@{ ViewData["Title"] = "Index"; }
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Request List To Process</h5>
+                    <h6 class="card-subtitle text-muted">List with all requests for process registered in IOTool.</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row col-12">
+                        @foreach (var item in Model)
+                        {
+                            @if (item.Id_StatusRequest == 1)
+                            {
+                                <div class="col-6 col-md-6 col-lg-6">
+                                    <div class="card" style="background-color:#D7004B;">
+                                        <div class="card-header">
+                                            <h5 class="card-title mb-0">#@item.Id</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">From: <b>@item.From</b></p>
+                                            <p class="card-text">To: <b>@item.To</b></p>
+                                            <p class="card-text">Status: <b>@item.StatusRequest</b></p>
+                                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-card3">Update</a>
+                                            @*<a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-card2">Delete</a>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            @if (item.Id_StatusRequest == 2)
+                            {
+                                <div class="col-6 col-md-6 col-lg-6">
+                                    <div class="card" style="background-color:#F2E500;">
+                                        <div class="card-header">
+                                            <h5 class="card-title mb-0">#@item.Id</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">From: <b>@item.From</b></p>
+                                            <p class="card-text">To: <b>@item.To</b></p>
+                                            <p class="card-text">Status: <b>@item.StatusRequest</b></p>
+                                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-card">Update</a>
+                                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-card2">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            @if (item.Id_StatusRequest == 3)
+                            {
+                                <div class="col-6 col-md-6 col-lg-6">
+                                    <div class="card" style="background-color: #4B4B46; color:#FFFFFF;">
+                                        <div class="card-header">
+                                            <h5 class="card-title mb-0" style="color: #FFFFFF;">#@item.Id</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">From: <b>@item.From</b></p>
+                                            <p class="card-text">To: <b>@item.To</b></p>
+                                            <p class="card-text">Status: <b>@item.StatusRequest</b></p>
+                                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-card">Update</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

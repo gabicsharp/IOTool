@@ -1,0 +1,104 @@
+﻿@model IEnumerable<IOToolDataLibrary.Models.CustomTables.NewCityModel>
+
+@{ ViewData["Title"] = "Index"; }
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Countries List</h5>
+                    <h6 class="card-subtitle text-muted">List with all countries who are registred in IOTool.</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped" id="table_cities" style="width:100%">
+                        <thead class="thead-grey">
+                            <tr>
+                                @*<th>
+                                        @Html.DisplayNameFor(model => model.Id)
+                                    </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.City)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Country)
+                                </th>
+                                <th>
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    @*<td>
+                                            @Html.DisplayFor(modelItem => item.Id)
+                                        </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.City)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Country)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="align-middle mr-2 fas fa-fw fa-trash-alt IconsTable"></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                @*<th>
+                                        @Html.DisplayNameFor(model => model.Id)
+                                    </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.City)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Country)
+                                </th>
+                                <th>
+                                    Action
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="mb-3">
+                        <a asp-action="Create" class="btn btn-addNewEntry">  <i class="fas fa-check"> Add a new country</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#table_cities tfoot th').each(function () {
+        var title = $('#example thead th').eq($(this).index()).text();
+        $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+    });
+
+    // DataTable
+    $('#table_cities').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            { extend: 'csv', title: 'IOTool Cities', className: 'btn btn-table' },
+            { extend: 'print', className: 'btn btn-table' }
+        ],
+        'language': {
+            'loadingRecords': '<div class="LoadGif"><p class="PLoadGif"><i class="spinner-grow text-dark mr-2" role="status"></i><i class= "spinner-grow text-primary mr-2" role="status" ></i><i class="spinner-grow text-secondary mr-2" role="status"></i><i class="spinner-grow text-success mr-2" role="status"></i><i class="spinner-grow text-warning mr-2" role="status"></i><i class="spinner-grow text-info mr-2" role="status"></i></p></div>'
+        }
+    });
+    var table = $('#table_cities').DataTable();
+
+    // Apply the search
+    table.columns().every(function () {
+        var that = this;
+
+        $('input', this.footer()).on('keyup change', function () {
+            that
+                .search(this.value)
+                .draw();
+        });
+    });
+</script>

@@ -1,0 +1,86 @@
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at IOToolWeb.Controllers.AuthenticationController.Index() in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Controllers\AuthenticationController.cs:line 46
+System.Net.Mail.SmtpFailedRecipientsException: Unable to send to all recipients.
+ ---> System.Net.Mail.SmtpFailedRecipientException: Mailbox unavailable. The server response was: 4.1.8 <VT_GX_SM_System_Notification_Service@vitesco-technologies.net>: Sender address rejected: Domain not found
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at IOToolWeb.Models.Email.CreateEmail(SmtpModel smtp, EmailGroupsModel emailGroup, EmailCreateModel request) in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Models\Email.cs:line 81
+System.Net.Mail.SmtpFailedRecipientsException: Unable to send to all recipients.
+ ---> System.Net.Mail.SmtpFailedRecipientException: Mailbox unavailable. The server response was: 4.1.8 <VT_GX_SM_System_Notification_Service@vitesco-technologies.net>: Sender address rejected: Domain not found
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at IOToolWeb.Models.Email.CreateEmail(SmtpModel smtp, EmailGroupsModel emailGroup, EmailCreateModel request) in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Models\Email.cs:line 81
+System.Net.Mail.SmtpFailedRecipientsException: Unable to send to all recipients.
+ ---> System.Net.Mail.SmtpFailedRecipientException: Mailbox unavailable. The server response was: 4.1.8 <VT_GX_SM_System_Notification_Service@vitesco-technologies.net>: Sender address rejected: Domain not found
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at IOToolWeb.Models.Email.CreateEmail(SmtpModel smtp, EmailGroupsModel emailGroup, EmailCreateModel request) in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Models\Email.cs:line 81
+System.Net.Mail.SmtpFailedRecipientsException: Unable to send to all recipients.
+ ---> System.Net.Mail.SmtpFailedRecipientException: Mailbox unavailable. The server response was: 4.1.8 <VT_GX_SM_System_Notification_Service@vitesco-technologies.net>: Sender address rejected: Domain not found
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at IOToolWeb.Models.Email.CreateEmail(SmtpModel smtp, EmailGroupsModel emailGroup, EmailCreateModel request) in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Models\Email.cs:line 81
+ email paseduidn3769 1/25/2022 11:10:09 AM
+uidn3769 1/25/2022 11:19:07 AM
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at IOToolWeb.Controllers.AuthenticationController.Index() in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Controllers\AuthenticationController.cs:line 50 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at IOToolWeb.Controllers.AuthenticationController.Index() in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Controllers\AuthenticationController.cs:line 50 
+uidn3769 1/25/2022 11:51:10 AM
+System.Net.Mail.SmtpFailedRecipientsException: Unable to send to all recipients.
+ ---> System.Net.Mail.SmtpFailedRecipientException: Mailbox unavailable. The server response was: 4.1.8 <VT_GX_SM_System_Notification_Service@vitesco-technologies.net>: Sender address rejected: Domain not found
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at IOToolWeb.Models.Email.CreateEmail(SmtpModel smtp, EmailGroupsModel emailGroup, EmailCreateModel request) in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Models\Email.cs:line 81
+ email paseduidn3769 1/25/2022 11:51:11 AM
+uidn3769 1/25/2022 12:04:32 PM
+1/30/2022 12:00:00 AM 1/25/2022 12:04:39 PM
+System.Net.Mail.SmtpFailedRecipientsException: Unable to send to all recipients.
+ ---> System.Net.Mail.SmtpFailedRecipientException: Mailbox unavailable. The server response was: 4.1.8 <VT_GX_SM_System_Notification_Service@vitesco-technologies.net>: Sender address rejected: Domain not found
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at IOToolWeb.Models.Email.DeleteRequesterEmail(SmtpModel smtp, EmailGroupsModel emailGroup, EmailDeleteModel request) in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Models\Email.cs:line 229
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at IOToolWeb.Models.Email.DeleteProcessorEmail(SmtpModel smtp, EmailGroupsModel emailGroup, EmailDeleteModel request) in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Models\Email.cs:line 319
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at IOToolWeb.Models.Email.UpdateProcessorEmail(SmtpModel smtp, EmailGroupsModel emailGroup, EmailUpdateModel request) in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Models\Email.cs:line 248
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at IOToolWeb.Controllers.AuthenticationController.Index() in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Controllers\AuthenticationController.cs:line 50 
+System.Net.Mail.SmtpFailedRecipientsException: Unable to send to all recipients.
+ ---> System.Net.Mail.SmtpFailedRecipientException: Mailbox unavailable. The server response was: 4.1.8 <VT_GX_SM_System_Notification_Service@vitesco-technologies.net>: Sender address rejected: Domain not found
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at IOToolWeb.Models.Email.CreateEmail(SmtpModel smtp, EmailGroupsModel emailGroup, EmailCreateModel request) in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Models\Email.cs:line 81
+System.Net.Mail.SmtpFailedRecipientsException: Unable to send to all recipients.
+ ---> System.Net.Mail.SmtpFailedRecipientException: Mailbox unavailable. The server response was: 4.1.8 <VT_GX_SM_System_Notification_Service@vitesco-technologies.net>: Sender address rejected: Domain not found
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at IOToolWeb.Models.Email.DeleteProcessorEmail(SmtpModel smtp, EmailGroupsModel emailGroup, EmailDeleteModel request) in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Models\Email.cs:line 374
+System.Net.Mail.SmtpFailedRecipientsException: Unable to send to all recipients.
+ ---> System.Net.Mail.SmtpFailedRecipientException: Mailbox unavailable. The server response was: 4.1.8 <VT_GX_SM_System_Notification_Service@vitesco-technologies.net>: Sender address rejected: Domain not found
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at IOToolWeb.Models.Email.UpdateProcessorEmail(SmtpModel smtp, EmailGroupsModel emailGroup, EmailUpdateModel request) in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Models\Email.cs:line 300
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at IOToolWeb.Controllers.AuthenticationController.Index() in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Controllers\AuthenticationController.cs:line 50 
+System.Net.Mail.SmtpFailedRecipientsException: Unable to send to all recipients.
+ ---> System.Net.Mail.SmtpFailedRecipientException: Mailbox unavailable. The server response was: 4.1.8 <VT_GX_SM_System_Notification_Service@vitesco-technologies.net>: Sender address rejected: Domain not found
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at IOToolWeb.Models.Email.CreateEmail(SmtpModel smtp, EmailGroupsModel emailGroup, EmailCreateModel request) in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Models\Email.cs:line 81
+System.Net.Mail.SmtpFailedRecipientsException: Unable to send to all recipients.
+ ---> System.Net.Mail.SmtpFailedRecipientException: Mailbox unavailable. The server response was: 4.1.8 <VT_GX_SM_System_Notification_Service@vitesco-technologies.net>: Sender address rejected: Domain not found
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at IOToolWeb.Models.Email.UpdateProcessorEmail(SmtpModel smtp, EmailGroupsModel emailGroup, EmailUpdateModel request) in D:\DSUsers\uidn3769\CodeShee\IOTool\IOToolWeb\Models\Email.cs:line 300

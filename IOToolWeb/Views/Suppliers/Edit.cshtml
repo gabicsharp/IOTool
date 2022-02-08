@@ -1,0 +1,147 @@
+﻿@model IOToolDataLibrary.Models.SuppliersModel
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+@if (Model is null)
+{
+    <h4>The requested record was not found.</h4>
+}
+else
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Supplier Update</h5>
+                        <h6 class="card-subtitle text-muted">Action to edit a supplier who are registred in IOTool.</h6>
+                    </div>
+                    <div class="card-body">
+                        <form asp-action="Edit">
+                            <div class="row col-lg-12 col-md-12">
+                                <div class="col-lg-3 col-md-6">
+                                    <h5>@Html.DisplayName("Name")</h5>
+                                </div>
+                                <div class="col-lg-9 col-md-6">
+                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                                    @Html.ValidationMessage("Name", "", new { @class = "text-danger" })
+                                    <br />
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                    <h5>@Html.DisplayName("Id_Country")</h5>
+                                </div>
+                                <div class="col-lg-9 col-md-6">
+                                    <select class="form-control select2" id="Id_Country" name="Id_Country" style="width:100%;"></select>
+                                    @Html.ValidationMessage("Id_Country", "", new { @class = "text-danger" })
+                                    <br />
+                                    <br />
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                    <h5>@Html.DisplayName("Id_City")</h5>
+                                </div>
+                                <div class="col-lg-9 col-md-6">
+                                    <select class="form-control select2" id="Id_City" name="Id_City" style="width:100%;"></select>
+                                    @Html.ValidationMessage("Id_City", "", new { @class = "text-danger" })
+                                    <br />
+                                    <br />
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                    <h5>@Html.DisplayName("Address")</h5>
+                                </div>
+                                <div class="col-lg-9 col-md-6">
+                                    @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                                    @Html.ValidationMessage("Address", "", new { @class = "text-danger" })
+                                    <br />
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                    <h5>@Html.DisplayName("Zip")</h5>
+                                </div>
+                                <div class="col-lg-9 col-md-6">
+                                    @Html.TextBoxFor(m => m.Zip, new { @class = "form-control" })
+                                    @Html.ValidationMessage("Zip", "", new { @class = "text-danger" })
+                                    <br />
+                                </div>
+                            </div>
+                            <input type="submit" value="Update" class="btn btn-card" />
+                        </form>
+                    </div>
+                    <input style="display:none!important" value="@Model.Id_Country" id="countryId" name="countryId" />
+                    <input style="display:none!important" value="@Model.Id_City" id="cityId" name="cityId" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    var countryVal = $("#countryId").val();
+    var cityVal = $("#cityId").val();
+
+    $("#Id_Country").select2();
+    $("#Id_City").select2();
+
+    FillSelectCountries();
+
+    $("#Id_Country").on('change', function () {
+        countryVal = $("#Id_Country").find(":selected").val();
+        FillSelectCities();
+    });
+
+    function FillSelectCountries() {
+        //ShowDivLoad();
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FiilCountries",
+            success: function (allCountries) {
+                $("#Id_Country").empty();
+                $("#Id_Country").append('<option value=0>Please select</option>');
+                $.each(allCountries, function (_indexallCountries, itemallCountries) {
+                    if (countryVal == itemallCountries.id) {
+                        $("#Id_Country").append('<option value=' + itemallCountries.id + ' selected="selected" >' + itemallCountries.name + '</option>');
+                        FillSelectCities();
+                    }
+                    else {
+                        $("#Id_Country").append('<option value=' + itemallCountries.id + ' >' + itemallCountries.name + '</option>');
+                    }
+                    FillSelectCities();
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+
+    function FillSelectCities() {
+        //ShowDivLoad();
+        $.ajax({
+            type: "POST",
+            url: "/DPs/FiilCities",
+            data: {
+                Id_Country: countryVal
+            },
+            success: function (allCities) {
+                $("#Id_City").empty();
+                $("#Id_City").append('<option value=0>Please select</option>');
+                $.each(allCities, function (_indexallCities, itemallCities) {
+                    if (cityVal == itemallCities.id) {
+                        //alert(cityVal);
+                        //cityValue = itemallCities.id;
+                        $("#Id_City").append('<option value=' + itemallCities.id + ' selected="selected" >' + itemallCities.name + '</option>');
+                    } else {
+                        $("#Id_City").append('<option value=' + itemallCities.id + ' >' + itemallCities.name + '</option>');
+                    }
+                });
+                HideDivLoad();
+            },
+            error: function (_error) {
+                HideDivLoad();
+                toastr._error("Error...");
+            }
+        });
+    }
+</script>

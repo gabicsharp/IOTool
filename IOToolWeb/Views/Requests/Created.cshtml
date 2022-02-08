@@ -1,0 +1,28 @@
+﻿@model IOToolDataLibrary.Models.CustomTables.NewRequestModel
+
+@{ ViewData["Title"] = "Created"; }
+
+
+@if (Model is null)
+{
+<h4>The requested record was not found.</h4> }
+else
+{
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Request Created</h5>
+                    <h6 class="card-subtitle text-muted">Action to create a new request was registered in IOTool.</h6>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"> A new request was registered with success in IOTool with uniq ID <b>@Model.Id</b>.</p>
+                    <p class="card-text"> In the next minutes you will receive an email with details.</p>
+                    <br />
+                    <input class="btn btn-card" type="button" value="New Request" onclick="@("window.location.href='" + @Url.Action("Index", "Requests") + "'");" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>}
